@@ -1,0 +1,137 @@
+.container {
+  background-color: #708090;
+}
+
+.title {
+  text-align: center;
+  margin-top: 10px;
+  color: #FFF;
+  font: 2em sans-serif;
+}
+
+.content {
+  margin-top: 50px;
+}
+
+
+.line {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.colums {
+  border: 1px solid #FFF;
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+  margin: 3px;
+  text-align: center;
+  font-size: 25px;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.buttonNewGame {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.buttonNewGame:hover {
+  background-color: #45a049;
+}
+
+.copyright {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  background-color: #DCDCDC;
+  padding: 10px;
+}
+
+.copyright-text {
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+}
+
+.keyboardContainer {
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.keyboard {
+  display: grid;
+  grid-template-columns: repeat(10, 30px);
+  gap: 5px;
+}
+
+.keyboardLineTwo {
+  display: grid;
+  grid-template-columns: repeat(9, 30px);
+  gap: 5px;
+  margin-top: 5px;
+  justify-content: center;
+}
+
+.keyboardLineThree {
+  display: grid;
+  grid-template-columns: repeat(9, 30px);
+  gap: 5px;
+  margin-top: 5px;
+  justify-content: center;
+}
+
+.buttonKeyboard {
+  width: 30px;
+  height: 30px;
+  background-color: #ccc;
+  border: 1px solid #999;
+  text-align: center;
+  cursor: pointer;
+}
+
+.buttonKeyboard:hover {
+  background-color: #999;
+}
+
+.buttonKeyboard2 {
+  width: 60px;
+  height: 30px;
+  background-color: #ccc;
+  border: 1px solid #999;
+  text-align: center;
+  cursor: pointer;
+}
+
+.buttonKeyboard2:hover {
+  background-color: #999;
+}
+
+.buttonKeyboardDel {
+  width: 50px;
+  height: 30px;
+  background-color: #ccc;
+  border: 1px solid #999;
+  text-align: center;
+  cursor: pointer;
+  margin-left: -20px;
+}
+
+.buttonKeyboardDel:hover {
+  background-color: #999;
+}
