@@ -1,6 +1,6 @@
 const LINE = 6;
-const COLUMS = 5;
-const URL_API = "https://nz6a94oot1.execute-api.us-east-1.amazonaws.com/word";
+const COLUMS = 6;
+const URL_API = "https://uatuakefwg.execute-api.us-east-1.amazonaws.com/word";
 
 const buttonQ = document.getElementById("buttonQ");
 const buttonW = document.getElementById("buttonW");
@@ -65,7 +65,7 @@ function getWordApi() {
       resp
         .json()
         .then((resp) => {
-          word = resp.word;
+          word = resp.WELLES_word;
         })
         .catch((error) => console.log(error));
     })
@@ -78,7 +78,20 @@ function checkFinish() {
     string += e;
   });
 
-  if (word == string) allColumnsGreen = true;
+  if (word == string) {
+    allColumnsGreen = true;
+    Notification.requestPermission().then((permission) => {
+      if (permission === "granted") {
+        let notificacao = new Notification("Título da Notificação", {
+          body: "Esta é uma notificação de exemplo!",
+          tag: "notificacao-exemplo",
+        });
+        console.log(notificacao);
+      } else {
+        console.log("Permissões de notificação não concedidas.");
+      }
+    });
+  }
 }
 
 function buttonNewGame() {

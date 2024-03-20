@@ -9,6 +9,13 @@
   font: 2em sans-serif;
 }
 
+.subTitle {
+  text-align: center;
+  margin-top: 10px;
+  color: #FFF;
+  font: 1em sans-serif;
+}
+
 .content {
   margin-top: 50px;
 }
