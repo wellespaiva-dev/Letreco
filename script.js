@@ -40,6 +40,47 @@ let word_attempt = [];
 
 let allColumnsGreen = false;
 
+function alertSucess() {
+  let modal = document.getElementById("modalAlert");
+  modal.style.display = "block";
+
+  let message = document.getElementById("messageAlert");
+  message.textContent =
+    "Parabéns! Você completou o desafio. Clique em comecar o jogo para jogar novamente.";
+
+  let closeBtn = document.getElementsByClassName("close")[0];
+  closeBtn.onclick = function () {
+    modal.style.display = "none";
+  };
+
+  window.onclick = function (event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  };
+}
+
+function alertError() {
+  let modal = document.getElementById("myModal");
+  modal.style.display = "block";
+
+  let message = document.getElementById("messageAlert");
+  message.textContent =
+    "Poxa! Você não completou o desafio. Clique em comecar o jogo para jogar novamente.";
+  message.style.color = "red";
+
+  let closeBtn = document.getElementsByClassName("close")[0];
+  closeBtn.onclick = function () {
+    modal.style.display = "none";
+  };
+
+  window.onclick = function (event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  };
+}
+
 function cleanHtml() {
   for (let i = 0; i < LINE; i++) {
     for (let j = 0; j < COLUMS; j++) {
@@ -80,17 +121,9 @@ function checkFinish() {
 
   if (word == string) {
     allColumnsGreen = true;
-    Notification.requestPermission().then((permission) => {
-      if (permission === "granted") {
-        let notificacao = new Notification("Título da Notificação", {
-          body: "Esta é uma notificação de exemplo!",
-          tag: "notificacao-exemplo",
-        });
-        console.log(notificacao);
-      } else {
-        console.log("Permissões de notificação não concedidas.");
-      }
-    });
+    alertSucess();
+  } else if (LINE == CURRENT_LINE) {
+    alertError();
   }
 }
 
@@ -146,10 +179,9 @@ function checkWord() {
       column.style.color = "white";
     }
   });
-
-  checkFinish();
   CURRENT_LINE++;
   CURRENT_COLUMS = 0;
+  checkFinish();
 }
 
 function captureKey(event) {
