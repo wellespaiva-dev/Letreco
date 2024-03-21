@@ -46,7 +46,7 @@ function alertSucess() {
 
   let message = document.getElementById("messageAlert");
   message.textContent =
-    "Parabéns! Você completou o desafio. Clique em comecar o jogo para jogar novamente.";
+    "🎉 Parabéns! 🎉\nVocê completou o desafio. Clique em comecar o jogo para jogar novamente. 🤓📚🔍";
 
   let closeBtn = document.getElementsByClassName("close")[0];
   closeBtn.onclick = function () {
@@ -61,13 +61,31 @@ function alertSucess() {
 }
 
 function alertError() {
-  let modal = document.getElementById("myModal");
+  let modal = document.getElementById("modalAlert");
+  modal.style.display = "block";
+
+  let message = document.getElementById("messageAlert");
+  message.textContent = `😞 Poxa!\nVocê não completou o desafio. Clique em comecar o jogo para jogar novamente.\nA palavra escolhida foi: ${word} 📚🔍`;
+
+  let closeBtn = document.getElementsByClassName("close")[0];
+  closeBtn.onclick = function () {
+    modal.style.display = "none";
+  };
+
+  window.onclick = function (event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  };
+}
+
+function alertInformation() {
+  let modal = document.getElementById("modalAlert");
   modal.style.display = "block";
 
   let message = document.getElementById("messageAlert");
   message.textContent =
-    "Poxa! Você não completou o desafio. Clique em comecar o jogo para jogar novamente.";
-  message.style.color = "red";
+    "🎉 Bem-vindo ao LexUFERSA! 🎉\nPrepare-se para mergulhar no universo da Ufersa Campus de Pau dos Ferros! Em nosso jogo, você terá 6 tentativas para adivinhar palavras relacionadas ao campus. Pode ser o nome de professores, disciplinas, eventos, temas de pesquisa, estrutura e até mesmo os viventes que fazem parte desse ambiente acadêmico vibrante! 📚🔍\nDivirta-se explorando e desvendando os segredos do LexUFERSA! 🤓✨";
 
   let closeBtn = document.getElementsByClassName("close")[0];
   closeBtn.onclick = function () {
@@ -237,6 +255,8 @@ getWordApi();
 buttonNewGame();
 
 generateTable();
+
+window.addEventListener("DOMContentLoaded", alertInformation);
 
 document.addEventListener("keyup", captureKey);
 
