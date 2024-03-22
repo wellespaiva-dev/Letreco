@@ -60,7 +60,7 @@
 
 .copyright {
   position: absolute;
-  bottom: 10px;
+  bottom: 0;
   left: 0;
   right: 0;
   text-align: center;
@@ -181,4 +181,73 @@
   color: black;
   text-decoration: none;
   cursor: pointer;
+}
+
+@media only screen and (min-width: 768px) {
+  .keyboardContainer {
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .container {
+    padding: 20px;
+  }
+
+  .title {
+    font-size: 1.5em;
+  }
+
+  .subTitle {
+    font-size: 0.8em;
+  }
+
+  .buttonContainer {
+    margin-top: 20px;
+  }
+
+  .buttonNewGame {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
+  .keyboardContainer {
+    top: auto;
+    left: auto;
+    transform: none;
+    width: 90%;
+    margin: 0 auto;
+    position: relative;
+    margin-top: 35px;
+  }
+
+  .keyboard {
+    grid-template-columns: repeat(10, minmax(30px, 1fr));
+    gap: 5px;
+    margin-left: -20px;
+  }
+
+  .keyboardLineTwo,
+  .keyboardLineThree {
+    grid-template-columns: repeat(9, minmax(30px, 1fr));
+    gap: 5px; 
+  }
+
+  .modalContent {
+    width: 80%;
+  }
+
+  .close {
+    font-size: 24px;
+    margin-top: -10px;
+    margin-right: -10px;
+  }
+
+  .copyright {
+    padding: 10px;
+    text-align: center;
+    font-size: 12px;
+  }
 }
